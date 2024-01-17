@@ -12,4 +12,5 @@ while True:
     client, address = s.accept()
     client.send(bytes("Hallo World, test","utf-8"))  # encode into bytes using utf-8 encoding
     print('Client is connected and hase the address: ' + str(address))
+    client.close()  # close connection
 
