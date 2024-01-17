@@ -10,5 +10,6 @@ s.listen(4)  # backlog , number of unaccepted connections
 
 while True:
     client, address = s.accept()
+    client.send(bytes("Hallo World","utf-8"))  # encode into bytes using utf-8 encoding
     print('Client is connected and hase the address: ' + str(address))
 
