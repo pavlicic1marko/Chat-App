@@ -10,5 +10,5 @@ s.listen(4)  # backlog , number of unaccepted connections
 
 while True:
     client, address = s.accept()
-    print('Client is connected and hase the address: ' + address)
+    print('Client is connected and hase the address: ' + str(address))
 
