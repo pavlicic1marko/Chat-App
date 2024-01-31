@@ -8,11 +8,8 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # INET is ipv4, SOCK_STRE
 s.connect((HOST_NAME, PORT))
 
 while True:
-    message = ''
-    while True:
-        msg = s.recv(10)
-        if len(msg) <= 0:
-            break
-        message += msg.decode("utf-8")
-    if len(message) > 0:
-        print(message)
+    message = s.recv(100)
+    print("server:" + message.decode('utf-8'))
+
+    message_to_send = input('Client:')
+    s.send(bytes(message_to_send, "utf-8"))
